@@ -1,0 +1,90 @@
+import java.util.*;
+import java.io.*;
+public class Main{
+    public static void main(String args[]) throws IOException{
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        String line = "";
+        while((line = bf.readLine()) != null){
+            String[] num = line.split(" ");
+            int sum = 0;
+            for (int i = 1; i < num.length; i++) {
+                sum += Integer.parseInt(num[i]);
+            }
+            System.out.println(sum);
+        }
+        bf.close();
+    }
+}
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+         while(sc.hasNextInt()){
+//              int n = Integer.parseInt(sc.nextLine());
+//              String str = sc.nextLine();
+//              String[] strs = str.split(" ");
+             int n =sc.nextInt();
+             String[] strs =new String[n];
+             for(int i=0;i<n;i++)
+                 strs[i]=sc.next();
+             Arrays.sort(strs);
+             for(int i=0;i<strs.length-1;i++)
+                 System.out.print(strs[i]+" ");
+             System.out.println(strs[strs.length-1]);
+         }
+    }
+}
+
+import java.util.*;
+
+public class Main{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        while(sc.hasNext()){
+            String[] str  =sc.nextLine().split(" ");
+
+            Arrays.sort(str);
+//             System.out.println(Arrays.toString(str));
+            for(int i = 0;i<str.length-1;i++){
+                System.out.print(str[i]+" ");
+            }
+            System.out.println(str[str.length-1]);
+        }
+}
+}
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+       Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            long a = sc.nextLong();
+            long b = sc.nextLong();
+            System.out.println(a + b);
+        }
+    }
+
+//     public static void print_sum(String[] a){
+//         int sum = 0;
+//         for(int i=0;i<a.length;i++){
+//             sum += Integer.parseInt(a[i]);
+//         }
+//         System.out.println(sum);
+//     }
+}
+
+public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String[] arr = new String[2];
+        while (true) {
+            for (int i = 0; i < 2; i++) {
+                arr[i] = s.nextLine();
+            }
+            String[] str = arr[1].substring(1, arr[1].length() - 1).trim().split(",");
+            int[] nums=new int[str.length];
+
+            for(int i=0;i<str.length;i++){
+                nums[i]=str[i].charAt(0)-'0';
+            }
+        }
