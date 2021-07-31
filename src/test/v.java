@@ -6,12 +6,11 @@ public class v {
         Set<int []> set = new HashSet<>();
         Integer[] a = {1,2,3};
         int[] b = {1,2,3};
+        int [] c2 = {4,5,6};
 //        int[] b = a;
 //        set.add(a);
 //        System.out.println(set.contains(b));
-
 //        System.out.println(-1);
-
 //        Arrays.sort(new int[]{2,1,3});
         float[][] c = {{(float) 1.3, (float) 1.4},
                 {(float) 1.0, (float) 1.5},
@@ -25,9 +24,6 @@ public class v {
 
             }
         });
-
-
-
 
         for (int i = 0; i < c.length; i++) {
             System.out.println(Arrays.toString(c[i]));

@@ -30,6 +30,7 @@ public class TreeNode {
     //构造树的方法
 //    感觉因为要同时处理左子树和右子树，所以必须得使用递归了
     public  static TreeNode create(int[] r){
+        if(r.length==0)return null;
         TreeNode root = new TreeNode(r[0]);
         create2(r,0,root);
         return root;
