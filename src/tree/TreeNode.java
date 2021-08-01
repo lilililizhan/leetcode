@@ -1,5 +1,10 @@
 package tree;
 
+import lianbiao.ListNode;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class TreeNode {
     int val;
     TreeNode left;
@@ -35,7 +40,10 @@ public class TreeNode {
         create2(r,0,root);
         return root;
     }
-    public static void create2(int[] r, int num,TreeNode tem){
+
+
+
+    public static void create2(int[] r, int num, TreeNode tem){
         if(num*2+1<r.length){
             if(r[num*2+1] !=0){
             TreeNode l = new TreeNode(r[num*2+1]);
@@ -49,4 +57,40 @@ public class TreeNode {
             create2(r,num*2+2,ri);
         }
     }
+//使用队列实现,层序遍历
+    public static  void cengxu(TreeNode root){
+        if(root == null) return;
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.addLast(root);
+        while (!deque.isEmpty()) {
+            TreeNode t = deque.removeFirst();
+            System.out.println(t.val);
+            if (t.left != null) deque.addLast(t.left);
+            if (t.right != null) deque.addLast(t.right);
+        }
+    }
+
+//    实现层序遍历，按层打印,记录每层的个数
+//    只使用一个变量，记录当前行的个数，当前行结束后，剩余即为下一行的个数
+    public static void cengxu2(TreeNode root){
+        if(root == null)return;
+        int n =1;
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.addLast(root);
+        while (!deque.isEmpty()) {
+            if(n !=0){
+                n -=1;
+            }
+            else {
+                n = deque.size()-1;
+                System.out.println();
+            }
+            TreeNode t = deque.removeFirst();
+            System.out.print(t.val+"--");
+            if (t.left != null) deque.addLast(t.left);
+            if (t.right != null) deque.addLast(t.right);
+        }
+
+    }
+
 }

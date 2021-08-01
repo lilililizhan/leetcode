@@ -1,5 +1,8 @@
 package lianbiao;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class getIntersectionNode {
     /*
     剑指offer,52,easy,
@@ -13,6 +16,11 @@ public class getIntersectionNode {
     1
     0报错，
     时间25%，空间34%
+
+    2021-07-31
+    160题，简单，想起来了之前的解法，
+    可以把链表1的节点保存在set中，对链表2中的每一个节点判断是否存在，
+    或者官方：链表1结束后移到链表2
      */
     public static void main(String[] args) {
         ListNode a1 = new ListNode(4);
@@ -42,6 +50,7 @@ public class getIntersectionNode {
 
 
     }
+//    实际的思路还是一样的，，
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int a = 0;
         int b = 0;
@@ -77,4 +86,21 @@ public class getIntersectionNode {
         }
         return A;
     }
+
+//    时间25%，空间10%
+    public static ListNode getIntersectionNode3(ListNode headA, ListNode headB) {
+        Set<ListNode> set = new HashSet<>();
+        ListNode t = headA;
+        while(t != null){
+            set.add(t);
+            t = t.next;
+        }
+        t = headB;
+        while (t != null){
+            if(set.contains(t))return t;
+            else t = t.next;
+        }
+        return null;
+    }
+
 }
